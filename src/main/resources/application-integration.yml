@@ -1,2 +1,3 @@
 accu-weather:
-  base-path: http://localhost:9999
+  base-path: http://localhost:${wiremock.http.port}
+  api-key: valid-api-key

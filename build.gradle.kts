@@ -18,6 +18,7 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
@@ -33,6 +34,8 @@ dependencies {
     testCompileOnly("org.projectlombok:lombok")
     testImplementation("org.assertj:assertj-core:3.23.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    testImplementation("com.github.tomakehurst:wiremock-jre8-standalone:2.35.0")
 }
 
 tasks.withType<Test> {

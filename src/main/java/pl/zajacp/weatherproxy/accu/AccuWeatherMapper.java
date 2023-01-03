@@ -54,7 +54,7 @@ class AccuWeatherMapper {
     }
 
     String mapToErrorResponse(String errorBody) {
-        AccuErrorResponse response = null;
+        AccuErrorResponse response;
         try {
             response = objectMapper.readValue(errorBody, AccuErrorResponse.class);
         } catch (JsonProcessingException e) {

@@ -21,7 +21,7 @@ public class ApiHelper {
     private final static String WEATHER_PATH = "/weather/";
 
     @SneakyThrows
-    public WeatherForecast getWeatherForecastExpectingOK(String zipCode){
+    public WeatherForecast getWeatherForecastExpectingOK(String zipCode) {
         return makeGetRequest(WEATHER_PATH + zipCode, WeatherForecast.class, status().isOk());
     }
 

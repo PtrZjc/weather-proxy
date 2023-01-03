@@ -1,7 +1,7 @@
 package pl.zajacp.weatherproxy.commons;
 
 public class TestAccuResponses {
-    final static String ACCU_LOCATION_RESPONSE = """
+    public final static String ACCU_LOCATION_RESPONSE = """
              [
                {
                  "Version": 1,
@@ -69,7 +69,7 @@ public class TestAccuResponses {
              ]
             """;
 
-    final static String ACCU_WEATHER_RESPONSE = """
+    public final static String ACCU_FORECAST_RESPONSE = """
             {
               "Headline": {
                 "EffectiveDate": "2022-12-23T01:00:00+01:00",
@@ -255,4 +255,13 @@ public class TestAccuResponses {
               ]
             }
             """;
+
+    public final static String ACCU_UNAUTHORIZED_RESPONSE = """
+            {
+                "Code": "Unauthorized",
+                "Message": "Api Authorization failed",
+                "Reference": "/locations/v1/postalcodes/PL/search?apikey=WRONG&q=53-522"
+            }""";
+
+    public final static String ACCU_LOCATION_NOT_FOUND_RESPONSE = "[]";
 }
