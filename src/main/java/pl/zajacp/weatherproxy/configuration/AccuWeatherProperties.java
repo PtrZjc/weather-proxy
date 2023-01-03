@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "accu-weather")
 @AllArgsConstructor
 @Getter
-public class AccuWeatherConfiguration {
+public class AccuWeatherProperties {
     private String basePath;
     private String apiKey;
 }
