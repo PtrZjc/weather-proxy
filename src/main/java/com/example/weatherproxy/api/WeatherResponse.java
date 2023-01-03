@@ -1,4 +1,5 @@
 package com.example.weatherproxy.api;
 
-record WeatherResponse(String zipCoda) {
-}
+import java.math.BigDecimal;
+import java.util.List;
+
