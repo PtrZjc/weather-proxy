@@ -1,14 +1,13 @@
 package pl.zajacp.weatherproxy.accu;
 
 import lombok.Getter;
-import okhttp3.ResponseBody;
 
 @Getter
 public class AccuWeatherClientException extends RuntimeException {
-    private final ResponseBody responseBody;
+    private final String apiResponse;
 
-    public AccuWeatherClientException(String message, ResponseBody responseBody) {
+    public AccuWeatherClientException(String message, String apiResponse) {
         super(message);
-        this.responseBody = responseBody;
+        this.apiResponse = apiResponse;
     }
 }

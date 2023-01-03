@@ -1,16 +1,15 @@
 package pl.zajacp.weatherproxy.accu;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.zajacp.weatherproxy.accu.model.AccuWeatherClient;
-import pl.zajacp.weatherproxy.shared.WeatherService;
 import pl.zajacp.weatherproxy.api.model.WeatherForecast;
-import pl.zajacp.weatherproxy.shared.PostalCode;
+import pl.zajacp.weatherproxy.shared.WeatherService;
+import pl.zajacp.weatherproxy.shared.model.PostalCode;
 
 @Service
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class AccuWeatherService implements WeatherService {
     private final AccuWeatherClient accuWeatherClient;
     private final AccuWeatherMapper accuWeatherMapper;

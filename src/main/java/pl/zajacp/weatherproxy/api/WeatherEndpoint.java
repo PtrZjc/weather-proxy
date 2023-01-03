@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import pl.zajacp.weatherproxy.api.model.WeatherForecast;
-import pl.zajacp.weatherproxy.shared.PostalCode;
+import pl.zajacp.weatherproxy.shared.model.PostalCode;
 import pl.zajacp.weatherproxy.shared.WeatherService;
 
 @RestController
 @RequestMapping(("/weather"))
 @Validated
 @AllArgsConstructor
-public class WeatherController {
+public class WeatherEndpoint {
 
     private final WeatherService weatherService;
 
