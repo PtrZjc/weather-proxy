@@ -5,4 +5,4 @@ spring:
       quiet-period: 1s
 
 accu-weather:
-  base-path: http://localhost:9999
+  base-path: http://localhost:9999 # local wiremock

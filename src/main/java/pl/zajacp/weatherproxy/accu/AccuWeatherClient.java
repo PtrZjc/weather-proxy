@@ -2,13 +2,13 @@ package pl.zajacp.weatherproxy.accu;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import okhttp3.ResponseBody;
 import org.springframework.stereotype.Component;
 import pl.zajacp.weatherproxy.accu.model.AccuLocationResponse;
 import pl.zajacp.weatherproxy.accu.model.AccuWeatherResponse;
 import pl.zajacp.weatherproxy.configuration.AccuWeatherProperties;
 import pl.zajacp.weatherproxy.shared.model.LocationKey;
 import pl.zajacp.weatherproxy.shared.model.PostalCode;
+import retrofit2.Response;
 
 import java.io.IOException;
 
@@ -20,6 +20,7 @@ public class AccuWeatherClient {
     private final RetrofitAccuWeatherClient retrofitAccuWeatherClient;
 
     private final AccuWeatherMapper accuWeatherMapper;
+
     public AccuLocationResponse getLocation(PostalCode postalCode) {
         try {
             return getAccuLocationResponse(postalCode);
@@ -42,9 +43,13 @@ public class AccuWeatherClient {
                 accuWeatherProperties.getApiKey()
         ).execute();
         if (response.isSuccessful() && response.body() != null) {
-            return response.body()[0];
+            if (response.body().length > 0) {
+                return response.body()[0];
+            } else {
+                throw new AccuLocationNotFoundException("No location found for postal code: " + postalCode.raw());
+            }
         }
-        throw getAccuClientException(response.errorBody());
+        throw getAccuClientException(response);
     }
 
     private AccuWeatherResponse getAccuWeatherResponse(LocationKey locationKey) throws IOException {
@@ -55,10 +60,10 @@ public class AccuWeatherClient {
         if (response.isSuccessful() && response.body() != null) {
             return response.body();
         }
-        throw getAccuClientException(response.errorBody());
+        throw getAccuClientException(response);
     }
 
-    private AccuWeatherClientException getAccuClientException(ResponseBody response) throws IOException {
-        return new AccuWeatherClientException("AccuWeather API error response", accuWeatherMapper.mapToErrorResponse(response.string()));
+    private AccuWeatherClientException getAccuClientException(Response<?> response) throws IOException {
+        return new AccuWeatherClientException("AccuWeather API error response", response.code(), accuWeatherMapper.mapToErrorResponse(response.errorBody().string()));
     }
 }

@@ -1,4 +1,4 @@
-package pl.zajacp.weatherproxy.commons;
+package pl.zajacp.weatherproxy.test;
 
 public class TestData {
     public final static String ZIP_CODE = "53-522";

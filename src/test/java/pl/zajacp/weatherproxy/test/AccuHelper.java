@@ -1,4 +1,4 @@
-package pl.zajacp.weatherproxy.commons;
+package pl.zajacp.weatherproxy.test;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,7 @@ import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
-import static pl.zajacp.weatherproxy.commons.TestData.DEFAULT_LOCATION_KEY;
+import static pl.zajacp.weatherproxy.test.TestData.DEFAULT_LOCATION_KEY;
 
 @Component
 public class AccuHelper {

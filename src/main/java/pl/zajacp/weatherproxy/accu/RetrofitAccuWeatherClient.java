@@ -1,7 +1,7 @@
 package pl.zajacp.weatherproxy.accu;
 
-import pl.zajacp.weatherproxy.accu.model.AccuWeatherResponse;
 import pl.zajacp.weatherproxy.accu.model.AccuLocationResponse;
+import pl.zajacp.weatherproxy.accu.model.AccuWeatherResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;

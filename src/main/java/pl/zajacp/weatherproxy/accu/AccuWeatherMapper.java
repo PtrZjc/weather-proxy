@@ -58,7 +58,7 @@ class AccuWeatherMapper {
         try {
             response = objectMapper.readValue(errorBody, AccuErrorResponse.class);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException("Could not parse AccuWeather error response", e);
+            return "Undescribed error";
         }
         return "Client failed with code: " + response.code() + "; and response: " + response.message();
     }

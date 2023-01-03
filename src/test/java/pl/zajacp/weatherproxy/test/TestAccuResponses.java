@@ -1,4 +1,4 @@
-package pl.zajacp.weatherproxy.commons;
+package pl.zajacp.weatherproxy.test;
 
 public class TestAccuResponses {
     public final static String ACCU_LOCATION_RESPONSE = """
@@ -263,5 +263,5 @@ public class TestAccuResponses {
                 "Reference": "/locations/v1/postalcodes/PL/search?apikey=WRONG&q=53-522"
             }""";
 
-    public final static String ACCU_LOCATION_NOT_FOUND_RESPONSE = "[]";
+    public final static String ACCU_EMPTY_LOCATION_RESPONSE = "[]";
 }

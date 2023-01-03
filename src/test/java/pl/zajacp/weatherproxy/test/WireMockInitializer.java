@@ -1,4 +1,4 @@
-package pl.zajacp.weatherproxy.commons;
+package pl.zajacp.weatherproxy.test;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.common.Slf4jNotifier;

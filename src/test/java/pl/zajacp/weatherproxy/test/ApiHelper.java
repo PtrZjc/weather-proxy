@@ -1,4 +1,4 @@
-package pl.zajacp.weatherproxy.commons;
+package pl.zajacp.weatherproxy.test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
