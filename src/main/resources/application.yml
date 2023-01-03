@@ -1,1 +1,4 @@
+accu-weather:
+  base-path: http://dataservice.accuweather.com
+  api-key: paste here
 

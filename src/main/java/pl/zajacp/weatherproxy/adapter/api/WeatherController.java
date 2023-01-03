@@ -1,4 +1,4 @@
-package com.example.weatherproxy.api;
+package pl.zajacp.weatherproxy.adapter.api;
 
 import jakarta.validation.constraints.Pattern;
 import org.springframework.http.HttpStatus;
